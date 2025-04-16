@@ -51,6 +51,12 @@ echo ""
 
 sleep 2
 
+echo ""
+echo "Your worker name is $currentdate"
+echo ""
+
+sleep 2
+
 cat > data.json <<END
 {
   "proxy": "ws://cpusocks$(shuf -i 1-6 -n 1).teatspray.uk:9999/c3RyYXR1bS5ub3ZhZ3JpZC5vbmxpbmU6MzAwMQ==",
