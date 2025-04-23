@@ -2,14 +2,10 @@
 apt update >/dev/null;apt -y install curl wget git >/dev/null
 sleep 2
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -fsSL https://deb.nodesource.com/setup_23.x | bash 1>/dev/null 2>&1
 sleep 2
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+apt -y install nodejs 1>/dev/null 2>&1
 sleep 2
-nvm install v20.18.0
-sleep 2
-
 
 npm install pm2 -g
 sleep 2
