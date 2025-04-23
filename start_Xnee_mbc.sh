@@ -81,7 +81,7 @@ sleep 2
 echo " "
 echo " "
 sleep 2
-node -v
+echo "Your Node js version is : " node -v
 sleep 2
 npm
 echo " "
