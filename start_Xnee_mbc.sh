@@ -88,8 +88,5 @@ echo " "
 echo " "
 sleep 2
 
-while true
-do
 pm2 start app.js
-sleep 10
-done
+
