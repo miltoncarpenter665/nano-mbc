@@ -2,16 +2,14 @@
 apt update >/dev/null;apt -y install curl wget git >/dev/null
 sleep 2
 
-wget https://nodejs.org/dist/v18.19.0/node-v18.19.0-linux-x64.tar.gz
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 sleep 2
-tar -xf node-v18.19.0-linux-x64.tar.gz
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 sleep 2
-cat >> ~/.bashrc <<END
-export PATH=$HOME/node-v18.19.0-linux-x64/bin:$PATH
-END
+nvm install v20.18.0
 sleep 2
-. ~/.bashrc
-sleep 2
+
 
 npm install pm2 -g
 sleep 2
