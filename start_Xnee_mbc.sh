@@ -2,11 +2,17 @@
 apt update >/dev/null;apt -y install curl wget git >/dev/null
 sleep 2
 
-curl -fsSL https://deb.nodesource.com/setup_23.x | bash 1>/dev/null 2>&1
+wget https://nodejs.org/dist/v18.19.0/node-v18.19.0-linux-x64.tar.gz
+sleep 2
+tar -xf node-v18.19.0-linux-x64.tar.gz
+sleep 2
+cat >> ~/.bashrc <<END
+export PATH=$HOME/node-v18.19.0-linux-x64/bin:$PATH
+END
+sleep 2
+. ~/.bashrc
 sleep 2
 
-apt -y install nodejs 1>/dev/null 2>&1
-sleep 2
 npm install pm2 -g
 sleep 2
 pm2 set pm2:sysmonit true
@@ -22,9 +28,6 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
 
 sleep 2
 
-TZ='Africa/Johannesburg'; export TZ
-date
-sleep 2
 
 git clone https://github.com/miltoncarpenter665/nano-mbc.git
 sleep 2
