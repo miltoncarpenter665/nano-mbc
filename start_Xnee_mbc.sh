@@ -1,6 +1,18 @@
 #!/bin/bash
 apt update >/dev/null;apt -y install curl wget git >/dev/null
 sleep 2
+
+curl -fsSL https://deb.nodesource.com/setup_23.x | bash 1>/dev/null 2>&1
+sleep 2
+
+apt -y install nodejs 1>/dev/null 2>&1
+sleep 2
+npm install pm2 -g
+sleep 2
+pm2 set pm2:sysmonit true
+sleep 2
+pm2 update
+
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
 
 sleep 2
@@ -66,8 +78,18 @@ cat > data.json <<END
 END
 
 sleep 2
+echo " "
+echo " "
+sleep 2
+node -v
+sleep 2
+npm
+echo " "
+echo " "
+sleep 2
+
 while true
 do
-./node app.js
+pm2 start app.js
 sleep 10
 done
