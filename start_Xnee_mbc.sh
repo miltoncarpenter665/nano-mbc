@@ -11,7 +11,7 @@ nvm install v20.18.0
 sleep 2
 
 
-npm install pm2 -g
+npm install pm2
 sleep 2
 pm2 set pm2:sysmonit true
 sleep 2
