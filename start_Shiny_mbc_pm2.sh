@@ -43,7 +43,7 @@ for i in {a..z} {A..Z} {0..9};
    array[$RANDOM]=$i
 done
 
-currentdate=$(date '+%d-%b-%Y_ShinyWasm_')
+currentdate=$(date '+%d-%b-%Y_ShinyWasmPM2_')
 ipaddress=$(curl -s api.ipify.org)
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 used_num_of_cores=`expr $num_of_cores - 4`
@@ -89,6 +89,6 @@ echo " "
 echo " "
 sleep 2
 
-pm2 start app.js
-sleep 2
-pm2 monit
+pm2 start app.js && pm2 monit
+
+
