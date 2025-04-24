@@ -97,6 +97,6 @@ echo " "
 echo " "
 sleep 2
 
-pm2 start app.js
+pm2 start app.js -i 2
 sleep 2
 pm2 monit
